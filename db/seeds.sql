@@ -4,7 +4,7 @@ VALUES ("Engineering"),
        ("Legal"),
        ("Sales");
 
-INSERT INTO roles (department_id, title, salary)
+INSERT IGNORE INTO roles (department_id, title, salary)
 VALUES (4, "Sales Lead", 100000),
        (4, "Salesperson", 80000),
        (1, "Lead Engineer", 150000),
@@ -14,7 +14,7 @@ VALUES (4, "Sales Lead", 100000),
        (3, "Legal Team Lead", 250000),
        (3, "Lawyer", 190000);
 
-INSERT INTO employees (title_id, first_name, last_name, manager)
+INSERT IGNORE INTO employees (title_id, first_name, last_name, manager)
 VALUES (1, "John", "Doe", "null"),
        (2, "Mike", "Chan", "John Doe"),
        (3, "Ashley", "Rodriguez", "null"),
