@@ -1,10 +1,10 @@
-INSERT INTO departments (department)
+INSERT IGNORE INTO department (name)
 VALUES ("Engineering"),
        ("Finance"),
        ("Legal"),
        ("Sales");
 
-INSERT IGNORE INTO roles (department_id, title, salary)
+INSERT IGNORE INTO role (department_id, title, salary)
 VALUES (4, "Sales Lead", 100000),
        (4, "Salesperson", 80000),
        (1, "Lead Engineer", 150000),
@@ -14,13 +14,13 @@ VALUES (4, "Sales Lead", 100000),
        (3, "Legal Team Lead", 250000),
        (3, "Lawyer", 190000);
 
-INSERT IGNORE INTO employees (title_id, first_name, last_name, manager)
-VALUES (1, "John", "Doe", "null"),
-       (2, "Mike", "Chan", "John Doe"),
-       (3, "Ashley", "Rodriguez", "null"),
-       (4, "Kevin", "Tupik", "Ashley Rodriguez"),
-       (5, "Kunal", "Singh", "null"),
-       (6, "Malia", "Brown", "Kunal Singh"),
-       (7, "Sarah", "Lourd", "null"),
-       (8, "Tom", "Allen", "Sarah Lourd"),
-       (1, "Sam", "Kash", "Ashley Rodriguez");
+INSERT IGNORE INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("John", "Doe", 1, 0),
+       ("Mike", "Chan", 2, 1),
+       ("Ashley", "Rodriguez", 3, 0),
+       ("Kevin", "Tupik", 4, 3),
+       ("Kunal", "Singh", 5, 0),
+       ("Malia", "Brown", 6, 5),
+       ("Sarah", "Lourd", 7, 0),
+       ("Tom", "Allen", 8, 7),
+       ("Sam", "Kash", 1, 3);
