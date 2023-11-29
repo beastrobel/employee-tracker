@@ -21,11 +21,11 @@ inquirer
 
 .then((data) => {
     if (data.main == 'view all departments'){
-
+        viewDepartments();
     } else if (data.main == 'view all roles'){
-
+        viewRoles();
     } else if (data.main == 'view all employees'){
-
+        viewEmployees();
     } else if (data.main == 'add a department'){
         inquirer
         .prompt([
@@ -36,6 +36,7 @@ inquirer
             }
         ])
         .then((data) => {
+        addDeparment();
         console.log('New deparment added.');
         });
     } else if (data.main == 'add a role'){
@@ -58,6 +59,7 @@ inquirer
             },
         ])
         .then((data) => {
+        addRole();
         console.log('New role added.');
         });
     } else if (data.main == 'add an employee'){
@@ -80,11 +82,42 @@ inquirer
             },
         ])
         .then((data) => {
+        addEmployee();
         console.log('New employee added.');
         });
     } else if (data.main == 'update an employee role'){
         console.log('Feature coming soon.');
     }
-}
+}); 
 
-); 
+function viewDepartments() {
+    const dbQuery = 'SELECT department.id, department.name FROM department';
+    db.query(dbQuery, (err, res) => {
+        if (err) {
+            console.log('Error');
+        } else {
+            console.table(res);
+        }
+    });
+};
+
+function viewRoles() {
+    
+};
+
+function viewEmployees() {
+    
+};
+
+function addDepartment() {
+    
+};
+
+function addRole() {
+    
+};
+
+function addEmployee() {
+    
+};
+
