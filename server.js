@@ -102,11 +102,25 @@ function viewDepartments() {
 };
 
 function viewRoles() {
-    
+    const dbQuery = 'SELECT department.name AS name, role.title, role.salary FROM role LEFT JOIN department ON role.department_id = department.id ORDER BY department.name';
+    db.query(dbQuery, (err, res) => {
+        if (err) {
+            console.log('Error');
+        } else {
+            console.table(res);
+        }
+    }); 
 };
 
 function viewEmployees() {
-    
+    const dbQuery = 'SELECT role.title AS title, employee.first_name, employee.last_name, employee.role_id, employee.manager_id FROM employee LEFT JOIN role ON employee.role_id = role.id';
+    db.query(dbQuery, (err, res) => {
+        if (err) {
+            console.log('Error');
+        } else {
+            console.table(res);
+        }
+    }); 
 };
 
 function addDepartment() {
